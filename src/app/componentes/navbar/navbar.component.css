@@ -1,0 +1,11 @@
+.principal{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+}
+
+.navbar{
+  width: 60%;
+  background-color: transparent;
+}
