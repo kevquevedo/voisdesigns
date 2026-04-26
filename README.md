@@ -1,59 +1,95 @@
-# Voisdesigns
+<div align="center">
+  <h1>🪵 Vois Designs</h1>
+  <p>Sitio web institucional de carpintería fina y muebles a medida</p>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+  <a href="https://voisdesigns.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge" alt="Demo" />
+  </a>
+  <img src="https://img.shields.io/badge/Angular-21.2-red?style=for-the-badge&logo=angular" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?style=for-the-badge&logo=tailwindcss" />
+  <img src="https://img.shields.io/badge/deployed_on-Vercel-black?style=for-the-badge&logo=vercel" />
+  <img src="https://img.shields.io/badge/status-en%20construcción-orange?style=for-the-badge" />
+</div>
 
-## Development server
+> ⚠️ **Sitio en construcción** — actualmente en desarrollo activo. Algunas secciones pueden estar incompletas.
 
-To start a local development server, run:
+
+---
+
+## 📸 Preview
+
+![Preview del sitio](https://github.com/user-attachments/assets/d93feadb-48e7-4729-a323-12bd5405562b)
+
+---
+
+## 🧰 Stack
+
+| Tecnología | Versión | Uso |
+|---|---|---|
+| Angular | 21.2 | Framework principal |
+| Tailwind CSS | 3.4 | Utilidades de estilo |
+| SCSS | — | Variables y estilos globales |
+| Vitest | — | Unit testing |
+| Vercel | — | Deploy y hosting |
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── about/          # Sección sobre la marca
+│   │   ├── collections/    # Catálogo de colecciones
+│   │   ├── custom/         # Trabajos a medida
+│   │   ├── footer/         # Pie de página
+│   │   ├── hero/           # Sección principal / banner
+│   │   ├── index-strip/    # Franja separadora
+│   │   ├── nav/            # Navegación
+│   │   └── projects/       # Proyectos realizados
+│   ├── data/               # Datos estáticos (mocks, constantes)
+│   ├── directives/         # Directivas reutilizables (ej: reveal)
+│   └── models/             # Interfaces y tipos TypeScript
+└── styles.scss             # Design tokens y variables CSS globales
+```
+
+## 🚀 Desarrollo local
 
 ```bash
+# 1. Clonar el repositorio
+git clone https://github.com/kevquevedo/voisdesigns.git
+cd voisdesigns
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Iniciar servidor de desarrollo
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abrí el navegador en `http://localhost:4200`
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 🏗️ Build de producción
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Los archivos compilados se generan en `/dist`.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 🧪 Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📄 Licencia
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT
