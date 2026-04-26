@@ -1,29 +1,39 @@
-<!-- TODO Fase 2 — Refinar con Sonnet:
-     Layout en escalera, hover con zoom, transición fade. -->
-<section id="colecciones" class="section" data-screen-label="02 Colecciones">
-  <header class="section__head">
-    <div class="section__index">
-      <span>02 —</span> <b>Colecciones</b>
+<section id="colecciones" class="section relative z-[1] block px-[var(--pad-x)] py-[calc(6rem*var(--density))]">
+
+  <!-- Header -->
+  <header class="flex justify-between items-baseline pb-6 mb-10 border-b border-[var(--line)]
+                 font-mono text-[0.75rem] tracking-[0.1em] uppercase
+                 md:mb-16">
+    <div>
+      <span class="text-[var(--muted)] mr-2">02 —</span>
+      <b>Colecciones</b>
     </div>
-    <div class="section__meta">Tres familias / 24 piezas</div>
+    <div class="text-[var(--muted)]">Tres familias / 24 piezas</div>
   </header>
 
-  <div class="collections">
+  <!-- Grid colecciones -->
+  <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12">
     @for (c of collections; track c.n; let i = $index) {
-      <article class="collection" [class]="'collection--0' + (i + 1)" appReveal>
-        <div class="collection__frame">
-          <div class="ph"></div>
-        </div>
-        <div class="collection__meta">
+      <article class="collection-card" appReveal>
+
+        <!-- Frame imagen -->
+        <div class="w-full aspect-[4/5] bg-[var(--line)] mb-6 overflow-hidden collection-card__frame"></div>
+
+        <!-- Meta -->
+        <div class="flex justify-between items-start">
           <div>
-            <div class="collection__name">
-              <em>{{ c.name }}</em>
+            <div class="font-serif italic text-[2rem] leading-none mb-2">{{ c.name }}</div>
+            <div class="font-mono text-[0.7rem] text-[var(--muted)] tracking-[0.08em] uppercase">
+              {{ c.desc }}
             </div>
-            <div class="collection__desc">{{ c.desc }}</div>
           </div>
-          <div class="collection__num">{{ c.num }}</div>
+          <div class="font-mono text-[0.7rem] text-[var(--muted)] tracking-[0.08em] uppercase shrink-0 ml-4">
+            {{ c.num }}
+          </div>
         </div>
+
       </article>
     }
   </div>
+
 </section>
