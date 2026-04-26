@@ -32,7 +32,10 @@
         </h3>
 
         <!-- Imagen -->
-        <div class="w-full aspect-[4/3] bg-[var(--line)] mb-6 overflow-hidden project-card__img"></div>
+        <div class="w-full aspect-[4/3] mb-6 overflow-hidden rounded-md shadow-md project-card__img">
+          <img [src]="p.img" [alt]="p.title[0] + ' ' + p.title[1]"
+              class="w-full h-full object-cover" />
+        </div>
 
         <!-- Meta -->
         <div class="flex flex-col gap-2 font-mono text-[0.75rem] text-[var(--muted)]

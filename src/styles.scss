@@ -96,7 +96,3 @@ em {
   color: var(--muted);
 }
 
-/* Compensación del nav fixed para scroll a anclas */
-html {
-  scroll-padding-top: 5rem; /* 80px — altura del nav */
-}

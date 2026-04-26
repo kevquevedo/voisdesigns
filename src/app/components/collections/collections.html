@@ -17,7 +17,9 @@
       <article class="collection-card" appReveal>
 
         <!-- Frame imagen -->
-        <div class="w-full aspect-[4/5] bg-[var(--line)] mb-6 overflow-hidden collection-card__frame"></div>
+        <div class="w-full aspect-[4/5] mb-6 overflow-hidden rounded-md shadow-md collection-card__frame">
+          <img [src]="c.img" [alt]="c.name" class="w-full h-full object-cover" />
+        </div>
 
         <!-- Meta -->
         <div class="flex justify-between items-start">

@@ -5,4 +5,5 @@ export interface Project {
   place: string;
   year: string;
   scope: string;
+  img: string;
 }

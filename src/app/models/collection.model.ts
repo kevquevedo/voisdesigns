@@ -3,4 +3,5 @@ export interface Collection {
   name: string;
   desc: string;
   num: string;
+  img: string;
 }
