@@ -1,18 +1,28 @@
-<!-- TODO Fase 2 — Refinar con Sonnet:
-     Disposición asimétrica, tamaños variables, link "Ver caso ↗". -->
-<section id="proyectos" class="section" data-screen-label="03 Proyectos">
-  <header class="section__head">
-    <div class="section__index">
-      <span>03 —</span> <b>Proyectos seleccionados</b>
+<section id="proyectos" class="relative z-[1] block px-[var(--pad-x)] py-[calc(6rem*var(--density))]">
+
+  <!-- Header -->
+  <header class="flex justify-between items-baseline pb-6 mb-10 border-b border-[var(--line)]
+                 font-mono text-[0.75rem] tracking-[0.1em] uppercase md:mb-16">
+    <div>
+      <span class="text-[var(--muted)] mr-2">03 —</span>
+      <b>Proyectos seleccionados</b>
     </div>
-    <div class="section__meta">2023 — 2026 / 04 de 18</div>
+    <div class="text-[var(--muted)]">2023 — 2026 / 04 de 18</div>
   </header>
 
-  <div class="projects">
+  <!-- Grid proyectos -->
+  <div class="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-x-12 md:gap-y-24">
     @for (p of projects; track p.n; let i = $index) {
-      <article class="project" [class]="'project--0' + (i + 1)" appReveal>
-        <div class="project__num">{{ p.n }} —</div>
-        <h3 class="project__title">
+      <article class="project-card" appReveal>
+
+        <!-- Número -->
+        <div class="font-mono text-[0.75rem] text-[var(--muted)] tracking-[0.08em] mb-4">
+          {{ p.n }} —
+        </div>
+
+        <!-- Título -->
+        <h3 class="font-serif font-normal leading-none m-0 mb-8
+                   text-[2rem] md:text-[2.5rem] lg:text-[3rem]">
           {{ p.title[0] }}
           @if (p.italic) {
             <em>{{ p.title[1] }}</em>
@@ -20,14 +30,24 @@
             {{ p.title[1] }}
           }
         </h3>
-        <div class="project__img"></div>
-        <div class="project__meta">
-          <span><b>{{ p.place }}</b></span>
+
+        <!-- Imagen -->
+        <div class="w-full aspect-[4/3] bg-[var(--line)] mb-6 overflow-hidden project-card__img"></div>
+
+        <!-- Meta -->
+        <div class="flex flex-col gap-2 font-mono text-[0.75rem] text-[var(--muted)]
+                    tracking-[0.08em] uppercase">
+          <span><b class="text-[var(--ink)]">{{ p.place }}</b></span>
           <span>{{ p.year }}</span>
           <span>{{ p.scope }}</span>
-          <span class="project__link">Ver caso ↗</span>
+          <a class="project-card__link mt-3 text-[var(--ink)] inline-flex items-center gap-1
+                    hover:gap-2 transition-all duration-200" href="#">
+            Ver caso ↗
+          </a>
         </div>
+
       </article>
     }
   </div>
+
 </section>
