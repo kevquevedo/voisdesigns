@@ -1,6 +1,23 @@
-<div class="index-strip">
-  <div><span>01 —</span> <b>Inicio</b></div>
-  <div><span>02 —</span> <b>Colecciones</b></div>
-  <div><span>03 —</span> <b>Proyectos</b></div>
-  <div><span>04 —</span> <b>Estudio</b> · 05 — A medida</div>
+<div class="index-strip relative z-[1] font-mono text-[0.75rem] tracking-[0.08em] uppercase
+            border-t border-b border-[var(--line)]
+            grid grid-cols-2 gap-x-4 gap-y-3 px-[var(--pad-x)] py-4
+            md:grid-cols-4 md:gap-2 md:py-6">
+
+  <div><span class="text-[var(--muted)] mr-2">01 —</span><b>Inicio</b></div>
+  <div><span class="text-[var(--muted)] mr-2">02 —</span><b>Colecciones</b></div>
+  <div><span class="text-[var(--muted)] mr-2">03 —</span><b>Proyectos</b></div>
+
+  <!-- En desktop: Estudio · A medida juntos. En mobile/tablet: separados -->
+  <div class="hidden md:block">
+    <span class="text-[var(--muted)] mr-2">04 —</span><b>Estudio</b>
+    <span class="text-[var(--muted)] mx-2">·</span>
+    05 — A medida
+  </div>
+  <div class="md:hidden">
+    <span class="text-[var(--muted)] mr-2">04 —</span><b>Estudio</b>
+  </div>
+  <div class="md:hidden">
+    <span class="text-[var(--muted)] mr-2">05 —</span><b>A medida</b>
+  </div>
+
 </div>
