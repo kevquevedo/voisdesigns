@@ -1,33 +1,50 @@
-<!-- TODO Fase 2 — Refinar con Sonnet:
-     Logo grande, formulario newsletter, links sociales. -->
-<footer id="contacto" class="foot" data-screen-label="06 Contacto">
-  <div class="foot__brand">
-    vois<em>designs</em>.
+<footer id="contacto" class="relative z-[1] bg-[var(--bg)] px-[var(--pad-x)] pt-16 pb-8">
+
+  <!-- Grid principal -->
+  <div class="grid grid-cols-1 gap-10 mb-12
+              sm:grid-cols-2 sm:gap-8
+              lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-8 lg:mb-16">
+
+    <!-- Brand -->
+    <div class="font-serif text-[clamp(2.5rem,8vw,6rem)] leading-none sm:col-span-2 lg:col-span-1">
+      vois<em class="text-[var(--warm)]">designs</em>.
+    </div>
+
+    <!-- Taller -->
+    <div class="flex flex-col gap-1 font-mono text-[0.75rem] text-[var(--muted)] tracking-[0.05em]">
+      <b class="text-[var(--ink)] uppercase tracking-[0.1em] text-[0.7rem] mb-2">Taller</b>
+      <span>Av. J. B. Justo 4400</span>
+      <span>Villa Crespo · BA</span>
+      <span>Lun — Vie / 9 — 18h</span>
+    </div>
+
+    <!-- Contacto -->
+    <div class="flex flex-col gap-1 font-mono text-[0.75rem] text-[var(--muted)] tracking-[0.05em]">
+      <b class="text-[var(--ink)] uppercase tracking-[0.1em] text-[0.7rem] mb-2">Contacto</b>
+      <span>hola&#64;voisdesigns.ar</span>
+      <span>+54 11 4823 0091</span>
+      <span>&#64;voisdesigns</span>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="flex flex-col gap-1 font-mono text-[0.75rem] text-[var(--muted)] tracking-[0.05em]">
+      <b class="text-[var(--ink)] uppercase tracking-[0.1em] text-[0.7rem] mb-2">Newsletter</b>
+      <span>Una pieza<br />nueva por mes</span>
+      <span class="mt-3 border-b border-[var(--ink)] pb-1 text-[var(--ink)] self-start
+                   cursor-pointer hover:opacity-70 transition-opacity">
+        Suscribirse ↗
+      </span>
+    </div>
+
   </div>
 
-  <div class="foot__col">
-    <b>Taller</b>
-    <span>Av. J. B. Justo 4400</span>
-    <span>Villa Crespo · BA</span>
-    <span>Lun — Vie / 9 — 18h</span>
-  </div>
-
-  <div class="foot__col">
-    <b>Contacto</b>
-    <span>hola&#64;voisdesigns.ar</span>
-    <span>+54 11 4823 0091</span>
-    <span>&#64;voisdesigns</span>
-  </div>
-
-  <div class="foot__col">
-    <b>Newsletter</b>
-    <span>Una pieza<br />nueva por mes</span>
-    <span class="foot__cta">Suscribirse ↗</span>
-  </div>
-
-  <div class="foot__bot">
+  <!-- Bottom bar -->
+  <div class="flex flex-col gap-2 pt-6 border-t border-[var(--line)]
+              font-mono text-[0.7rem] tracking-[0.08em] uppercase text-[var(--muted)]
+              sm:flex-row sm:justify-between sm:gap-0">
     <span>© MMXXVI voisdesigns / Carpintería fina</span>
     <span>Buenos Aires · ARG</span>
     <span>Site / N° 014</span>
   </div>
+
 </footer>
