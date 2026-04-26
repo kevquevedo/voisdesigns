@@ -3,24 +3,26 @@
   padding-left: clamp(2rem, 8vw, 8rem);
 }
 
-// Foto: fluida en mobile, absoluta a la derecha en md+
 .hero__photo {
   width: 100%;
   aspect-ratio: 4 / 3;
   margin-top: 2.5rem;
 
-  @media (min-width: 768px) {
+  // Solo absoluta desde 1024px (lg), no desde 768px
+  @media (min-width: 1024px) {
     position: absolute;
-    top: 4rem;
+    top: 6rem;
     right: 0;
-    width: 35%;
+    width: 30%;
     aspect-ratio: 3 / 4;
     margin-top: 0;
   }
+}
 
-  @media (min-width: 1024px) {
-    top: 6rem;
-    width: 30%;
+@media (max-width: 1023px) {
+  .hero__photo [appParallax],
+  .hero__display [appParallax] {
+    transform: none !important;
   }
 }
 
