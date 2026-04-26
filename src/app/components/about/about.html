@@ -1,36 +1,52 @@
-<!-- TODO Fase 2 — Refinar con Sonnet:
-     Foto del taller, retrato del fundador, cita destacada. -->
-<section id="estudio" class="section" data-screen-label="04 Estudio">
-  <header class="section__head">
-    <div class="section__index">
-      <span>04 —</span> <b>El estudio</b>
+<section id="estudio" class="relative z-[1] block px-[var(--pad-x)] py-[calc(6rem*var(--density))]">
+
+  <!-- Header -->
+  <header class="flex justify-between items-baseline pb-6 mb-10 border-b border-[var(--line)]
+                 font-mono text-[0.75rem] tracking-[0.1em] uppercase md:mb-16">
+    <div>
+      <span class="text-[var(--muted)] mr-2">04 —</span>
+      <b>El estudio</b>
     </div>
-    <div class="section__meta">Fundado 2014 / Buenos Aires</div>
+    <div class="text-[var(--muted)]">Fundado 2014 / Buenos Aires</div>
   </header>
 
-  <div class="about">
-    <p class="about__quote" appReveal>
+  <!-- Body -->
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr] md:gap-16">
+
+    <!-- Cita -->
+    <p class="font-serif text-[clamp(1.5rem,3vw,2.5rem)] leading-[1.25] m-0" appReveal>
       Trabajamos con <em>maderas nobles</em>, ensambles tradicionales y un
       ritmo que respeta el tiempo de la materia. Cada pieza nace de un
       plano dibujado a mano y termina firmada por su autor.
     </p>
-    <aside class="about__side" appReveal>
-      <p>
-        <b>Taller</b>
+
+    <!-- Aside -->
+    <aside class="grid gap-8 font-mono text-[0.8rem] text-[var(--muted)] leading-[1.6]
+                  md:gap-10" appReveal>
+      <div>
+        <b class="block mb-1 text-[var(--ink)] text-[0.7rem] tracking-[0.1em] uppercase">
+          Taller
+        </b>
         Av. Juan B. Justo 4400<br />
         Villa Crespo, BA
-      </p>
-      <p>
-        <b>Equipo</b>
+      </div>
+      <div>
+        <b class="block mb-1 text-[var(--ink)] text-[0.7rem] tracking-[0.1em] uppercase">
+          Equipo
+        </b>
         6 carpinteros<br />
         2 diseñadores<br />
         1 herrero asociado
-      </p>
-      <p>
-        <b>Materiales</b>
+      </div>
+      <div>
+        <b class="block mb-1 text-[var(--ink)] text-[0.7rem] tracking-[0.1em] uppercase">
+          Materiales
+        </b>
         Nogal · Roble · Petiribí<br />
         Cedro · Guatambú · Olmo
-      </p>
+      </div>
     </aside>
+
   </div>
+
 </section>
