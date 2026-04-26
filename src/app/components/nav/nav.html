@@ -1,16 +1,69 @@
-<!-- TODO Fase 2 — Refinar con Sonnet:
-     Animación hover en links, sticky con blur al scroll, mobile menu. -->
-<nav class="nav">
-  <a class="nav__brand" href="#">
-    voisdesigns<sup>® EST. 2014</sup>
+<nav class="nav fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-[var(--pad-x)] py-6 font-mono text-[0.8125rem] transition-all duration-400"
+     [class.nav--scrolled]="scrolled()">
+
+  <!-- Brand -->
+  <a class="nav__brand font-serif italic text-2xl font-normal relative z-[110]" href="#">
+    voisdesigns<sup class="font-mono not-italic text-[0.5rem] tracking-[0.12em] ml-2 text-[var(--muted)]">® EST. 2014</sup>
   </a>
 
-  <div class="nav__menu">
-    <a href="#colecciones"><span class="num">02 —</span> Colecciones</a>
-    <a href="#proyectos"><span class="num">03 —</span> Proyectos</a>
-    <a href="#estudio"><span class="num">04 —</span> Estudio</a>
-    <a href="#medida"><span class="num">05 —</span> A medida</a>
+  <!-- Links desktop -->
+  <div class="nav__menu hidden lg:flex gap-8">
+    <a class="nav__link relative pb-0.5" href="#colecciones">
+      <span class="text-[var(--muted)] mr-1">02 —</span> Colecciones
+    </a>
+    <a class="nav__link relative pb-0.5" href="#proyectos">
+      <span class="text-[var(--muted)] mr-1">03 —</span> Proyectos
+    </a>
+    <a class="nav__link relative pb-0.5" href="#estudio">
+      <span class="text-[var(--muted)] mr-1">04 —</span> Estudio
+    </a>
+    <a class="nav__link relative pb-0.5" href="#medida">
+      <span class="text-[var(--muted)] mr-1">05 —</span> A medida
+    </a>
   </div>
 
-  <a class="nav__cta" href="#contacto">Contacto ↗</a>
+  <!-- CTA desktop -->
+  <a class="nav__cta hidden lg:block border border-[var(--ink)] px-4 py-2 tracking-[0.1em] uppercase transition-all duration-250"
+     href="#contacto">Contacto ↗</a>
+
+  <!-- Hamburger -->
+  <button class="nav__burger lg:hidden flex flex-col gap-1.5 bg-transparent border-0 cursor-pointer p-1 relative z-[110]"
+          [class.nav__burger--open]="menuOpen()"
+          (click)="toggleMenu()"
+          aria-label="Abrir menú">
+    <span class="block w-6 h-px bg-[var(--ink)]"></span>
+    <span class="block w-6 h-px bg-[var(--ink)]"></span>
+  </button>
+
 </nav>
+
+<!-- Overlay -->
+<div class="nav-overlay fixed inset-0 z-[90] bg-[var(--bg)] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-400"
+     [class.nav-overlay--open]="menuOpen()">
+
+  <div class="flex flex-col items-center gap-12 px-[var(--pad-x)]">
+
+    <div class="nav-overlay__links flex flex-col items-center gap-6">
+      <a class="nav-overlay__link flex items-baseline gap-3" href="#colecciones" (click)="closeMenu()">
+        <span class="font-mono text-xs text-[var(--muted)]">02 —</span>
+        <em class="font-serif italic text-[clamp(2rem,8vw,3.5rem)] text-[var(--ink)]">Colecciones</em>
+      </a>
+      <a class="nav-overlay__link flex items-baseline gap-3" href="#proyectos" (click)="closeMenu()">
+        <span class="font-mono text-xs text-[var(--muted)]">03 —</span>
+        <em class="font-serif italic text-[clamp(2rem,8vw,3.5rem)] text-[var(--ink)]">Proyectos</em>
+      </a>
+      <a class="nav-overlay__link flex items-baseline gap-3" href="#estudio" (click)="closeMenu()">
+        <span class="font-mono text-xs text-[var(--muted)]">04 —</span>
+        <em class="font-serif italic text-[clamp(2rem,8vw,3.5rem)] text-[var(--ink)]">Estudio</em>
+      </a>
+      <a class="nav-overlay__link flex items-baseline gap-3" href="#medida" (click)="closeMenu()">
+        <span class="font-mono text-xs text-[var(--muted)]">05 —</span>
+        <em class="font-serif italic text-[clamp(2rem,8vw,3.5rem)] text-[var(--ink)]">A medida</em>
+      </a>
+    </div>
+
+    <a class="nav-overlay__cta font-mono text-[0.8125rem] tracking-[0.1em] uppercase border border-[var(--ink)] px-5 py-2.5"
+       href="#contacto" (click)="closeMenu()">Contacto ↗</a>
+
+  </div>
+</div>

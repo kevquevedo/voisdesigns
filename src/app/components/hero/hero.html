@@ -1,42 +1,55 @@
-<!-- TODO Fase 2 — Refinar con Sonnet:
-     Layout asimétrico, tipografía display, parallax en foto. -->
-<section class="hero" data-screen-label="01 Hero">
-  <div class="hero__top">
-    <div class="col-a label"><span>Índice / 01</span></div>
-    <div class="col-b label">Carpintería fina · Buenos Aires</div>
-    <div class="col-c label">MMXXVI / N° 014</div>
+<section class="hero relative z-[1] px-[var(--pad-x)] pb-[calc(6rem*var(--density))]">
+
+  <!-- Top bar: apilado en mobile, 3 cols desde sm -->
+  <div class="flex flex-col gap-1 py-6 border-b border-[var(--line)]
+              sm:grid sm:grid-cols-3 sm:items-center sm:py-8 sm:gap-0">
+    <div class="label">Índice / 01</div>
+    <div class="label sm:text-center">Carpintería fina · Buenos Aires</div>
+    <div class="label sm:text-right">MMXXVI / N° 014</div>
   </div>
 
-  <div class="hero__display" appReveal>
-    <h1 class="hero__title">
-      <span class="word--block">Muebles</span>
-      <span class="word--indent word--italic">hechos</span>
-      <span class="word--block">a mano.</span>
+  <!-- Display: título + foto -->
+  <div class="hero__display relative py-10 md:py-16" appReveal>
+    <h1 class="hero__title font-serif font-normal m-0"
+        style="line-height:0.9; letter-spacing:-0.02em; font-size:clamp(3.2rem,11vw,11rem)">
+      <span class="block">Muebles</span>
+      <span class="block italic hero__indent">hechos</span>
+      <span class="block">a mano.</span>
     </h1>
+
+    <!-- Parallax solo en md+ -->
     <div class="hero__photo" appParallax [strength]="0.06">
-      <div class="ph"></div>
-      <div class="ph-meta">Fig. 01 — Mesa Olmo / 2025</div>
+      <div class="w-full h-full bg-[var(--line)]"></div>
+      <div class="font-mono text-[0.7rem] text-[var(--muted)] tracking-[0.1em] uppercase mt-3">
+        Fig. 01 — Mesa Olmo / 2025
+      </div>
     </div>
   </div>
 
-  <div class="hero__bottom">
-    <p class="hero__lede" appReveal>
+  <!-- Bottom: lede + stats -->
+  <div class="grid grid-cols-1 gap-10 pt-10 border-t border-[var(--line)]
+              lg:grid-cols-2 lg:gap-16 lg:pt-16">
+
+    <p class="font-serif text-[1.4rem] leading-[1.35] m-0 md:text-[1.75rem]" appReveal>
       Un taller de <em>carpintería fina</em> donde cada pieza es trazada,
       ensamblada y terminada por la misma mano que la imaginó.
     </p>
-    <div class="hero__stats" appReveal>
+
+    <div class="grid grid-cols-3 gap-4 md:gap-8" appReveal>
       <div>
-        <div class="stat__num">12</div>
-        <div class="stat__lbl">Años de oficio en taller propio</div>
+        <div class="font-serif text-[2.25rem] leading-none md:text-[3rem]">12</div>
+        <div class="label mt-2 leading-snug">Años de oficio en taller propio</div>
       </div>
       <div>
-        <div class="stat__num">240+</div>
-        <div class="stat__lbl">Piezas únicas entregadas</div>
+        <div class="font-serif text-[2.25rem] leading-none md:text-[3rem]">240+</div>
+        <div class="label mt-2 leading-snug">Piezas únicas entregadas</div>
       </div>
       <div>
-        <div class="stat__num">07</div>
-        <div class="stat__lbl">Maderas nobles seleccionadas</div>
+        <div class="font-serif text-[2.25rem] leading-none md:text-[3rem]">07</div>
+        <div class="label mt-2 leading-snug">Maderas nobles seleccionadas</div>
       </div>
     </div>
+
   </div>
+
 </section>

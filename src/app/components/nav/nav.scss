@@ -1,43 +1,77 @@
-.nav {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem var(--pad-x);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8125rem;
+// Sticky blur al scroll
+.nav--scrolled {
+  background: rgba(237, 228, 211, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  border-bottom: 1px solid var(--line);
+}
 
-  &__brand {
-    font-family: 'Instrument Serif', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    font-weight: 400;
+// Underline animado en links desktop (pseudo-elemento)
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: width 0.3s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.nav__link:hover::after { width: 100%; }
 
-    sup {
-      font-family: 'JetBrains Mono', monospace;
-      font-style: normal;
-      font-size: 0.5rem;
-      letter-spacing: 0.12em;
-      margin-left: 0.5rem;
-      color: var(--muted);
-    }
+// CTA hover
+.nav__cta:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+// Hamburger → X
+.nav__burger span {
+  transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
+  transform-origin: center;
+}
+.nav__burger--open span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+.nav__burger--open span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+// Overlay visible
+.nav-overlay--open {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+// Stagger links overlay
+.nav-overlay__link {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) { transition-delay: #{$i * 0.07}s; }
   }
+}
+.nav-overlay--open .nav-overlay__link {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  &__menu {
-    display: flex;
-    gap: 2rem;
-
-    .num {
-      color: var(--muted);
-      margin-right: 0.25rem;
-    }
-  }
-
-  &__cta {
-    border: 1px solid var(--ink);
-    padding: 0.5rem 1rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
+// CTA overlay
+.nav-overlay__cta {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 0.35s, transform 0.4s ease 0.35s,
+              background 0.25s ease, color 0.25s ease;
+}
+.nav-overlay--open .nav-overlay__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-overlay__cta:hover {
+  background: var(--ink);
+  color: var(--bg);
 }
