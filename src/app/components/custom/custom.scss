@@ -1,0 +1,72 @@
+.custom-section {
+  position: relative;
+  z-index: 2;
+  background: var(--dark);
+  color: var(--bg);
+  padding: calc(8rem * var(--density)) var(--pad-x);
+}
+
+.custom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem 6rem;
+
+  &__head {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 2rem;
+
+    h2 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1;
+      margin: 0;
+
+      em {
+        font-style: italic;
+      }
+    }
+  }
+
+  &__index {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.6;
+
+    span {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__step {
+    .num {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 3rem;
+      opacity: 0.4;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      font-size: 1.75rem;
+      margin: 0 0 0.75rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      max-width: 32ch;
+      opacity: 0.75;
+    }
+  }
+}

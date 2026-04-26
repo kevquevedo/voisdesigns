@@ -1,0 +1,24 @@
+<!-- TODO Fase 2 — Refinar con Sonnet:
+     Fondo oscuro, números romanos como elementos gráficos grandes,
+     transiciones entre pasos al hacer scroll. -->
+<section id="medida" class="custom-section" data-screen-label="05 A medida">
+  <div class="custom">
+    <div class="custom__head">
+      <div class="custom__index">
+        <span>05 —</span> <b>A medida</b>
+      </div>
+      <h2 appReveal>
+        Diseñamos contigo,<br />
+        construimos <em>para ti</em>.
+      </h2>
+    </div>
+
+    @for (s of steps; track s.n) {
+      <div class="custom__step" appReveal>
+        <span class="num">{{ s.n }}</span>
+        <h3>{{ s.t }}</h3>
+        <p>{{ s.d }}</p>
+      </div>
+    }
+  </div>
+</section>

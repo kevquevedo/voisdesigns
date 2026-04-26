@@ -1,0 +1,42 @@
+<!-- TODO Fase 2 — Refinar con Sonnet:
+     Layout asimétrico, tipografía display, parallax en foto. -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="hero__top">
+    <div class="col-a label"><span>Índice / 01</span></div>
+    <div class="col-b label">Carpintería fina · Buenos Aires</div>
+    <div class="col-c label">MMXXVI / N° 014</div>
+  </div>
+
+  <div class="hero__display" appReveal>
+    <h1 class="hero__title">
+      <span class="word--block">Muebles</span>
+      <span class="word--indent word--italic">hechos</span>
+      <span class="word--block">a mano.</span>
+    </h1>
+    <div class="hero__photo" appParallax [strength]="0.06">
+      <div class="ph"></div>
+      <div class="ph-meta">Fig. 01 — Mesa Olmo / 2025</div>
+    </div>
+  </div>
+
+  <div class="hero__bottom">
+    <p class="hero__lede" appReveal>
+      Un taller de <em>carpintería fina</em> donde cada pieza es trazada,
+      ensamblada y terminada por la misma mano que la imaginó.
+    </p>
+    <div class="hero__stats" appReveal>
+      <div>
+        <div class="stat__num">12</div>
+        <div class="stat__lbl">Años de oficio en taller propio</div>
+      </div>
+      <div>
+        <div class="stat__num">240+</div>
+        <div class="stat__lbl">Piezas únicas entregadas</div>
+      </div>
+      <div>
+        <div class="stat__num">07</div>
+        <div class="stat__lbl">Maderas nobles seleccionadas</div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<!-- TODO Fase 2 — Refinar con Sonnet:
+     Disposición asimétrica, tamaños variables, link "Ver caso ↗". -->
+<section id="proyectos" class="section" data-screen-label="03 Proyectos">
+  <header class="section__head">
+    <div class="section__index">
+      <span>03 —</span> <b>Proyectos seleccionados</b>
+    </div>
+    <div class="section__meta">2023 — 2026 / 04 de 18</div>
+  </header>
+
+  <div class="projects">
+    @for (p of projects; track p.n; let i = $index) {
+      <article class="project" [class]="'project--0' + (i + 1)" appReveal>
+        <div class="project__num">{{ p.n }} —</div>
+        <h3 class="project__title">
+          {{ p.title[0] }}
+          @if (p.italic) {
+            <em>{{ p.title[1] }}</em>
+          } @else {
+            {{ p.title[1] }}
+          }
+        </h3>
+        <div class="project__img"></div>
+        <div class="project__meta">
+          <span><b>{{ p.place }}</b></span>
+          <span>{{ p.year }}</span>
+          <span>{{ p.scope }}</span>
+          <span class="project__link">Ver caso ↗</span>
+        </div>
+      </article>
+    }
+  </div>
+</section>
